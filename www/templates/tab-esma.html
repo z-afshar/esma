@@ -1,0 +1,19 @@
+<ion-view view-title="همه نامها">
+  <ion-content class="padding">
+    <div>
+     <input class="form-control" id="query inputSuccess" ng-model="query" type="text" placeholder="یک نام وارد کنید" autofocus>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" collection-repeat="esm in esmaFilter = (esma | filter: query)" type="item-text-wrap" href="#/tab/esma/{{esm.id}}">
+        <img ng-src="{{esm.img}}">
+        <h2>{{esm.esm}}</h2>
+        <p>{{esm.ava}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(esm)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </div>
+  </ion-content>
+</ion-view>
