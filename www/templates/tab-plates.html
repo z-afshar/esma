@@ -1,0 +1,20 @@
+<ion-view view-title="پلاک ماشین">
+  <ion-content class="padding">
+    <div>
+        <form class="form-horizontal col-xs-12">
+            <div class="form-group form-group-lg has-success">
+                <input class="form-control" id="query inputSuccess" ng-model="query" type="text" placeholder="نام استان یا پلاک"
+                       autofocus>
+                <a ng-click="query = ''" ng-show="query.length > 0" class="clearQuery">X</a>
+            </div>
+        </form>
+        <ion-list>
+          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="plate in platesFilter = (plates | filter: query) | orderBy: 'name' " type="item-text-wrap" >
+
+            <h2>{{plate.name}}</h2>
+
+          </ion-item>
+        </ion-list>        
+    </div>
+  </ion-content>
+</ion-view>
